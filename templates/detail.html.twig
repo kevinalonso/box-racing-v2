@@ -22,18 +22,8 @@
 						
 						<p class="product-description">{{announcement[0].Description}}</p>
 						<h4 class="price">Prix : <span>{{announcement[0].Price}}€</span></h4>
-						<!--<p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>-->
 						
-						<div class="action mb-3">
-							{% if app.user %}
-								<a href="#"class="btn btn-success btn-block" type="button">Payer le service</a>
-							{% else %}
-								<div class="alert alert-danger text-center" role="alert">
-  									<span>Veuillez vous connecter pour payer</span>
-								</div>
-							{% endif %}
-							
-						</div>
+						
 					</div>
 				</div>
 			</div>

@@ -18,11 +18,16 @@ easy_admin:
             form:  # <-- 'form' is applied to both 'new' and 'edit' views
                 fields:
                     - 'Title'
+                    - 'Cylindrical'
                     - 'Description'
                     - 'DatePublish'
                     - 'IsActive'
+                    - 'IsPermisA2'
                     - 'Price'
-                    - 'Image'
+                    - { property: 'Image1', type: 'file_upload', type_options: { upload_dir: 'templates/imagesmotos/' } }
+                    - { property: 'Image2', type: 'file_upload', type_options: { upload_dir: 'templates/imagesmotos/' } }
+                    - { property: 'Image3', type: 'file_upload', type_options: { upload_dir: 'templates/imagesmotos/' } }
+                    - { property: 'Image4', type: 'file_upload', type_options: { upload_dir: 'templates/imagesmotos/' } }
                     - 'Category'
                     - 'User'
 
@@ -41,22 +46,3 @@ easy_admin:
                     - 'City'
                     - 'IsActive'
                     - 'IsPro'
-
-        Sale:
-            class: App\Entity\Sale
-            label: 'Transactions'
-            form:
-                fields:
-                    - 'SellerName'
-                    - 'BuyerName'
-                    - 'DateofSale'
-                    - 'Price'
-
-        ImageCategory:
-            class: App\Entity\ImageCategory
-            label: 'Images Catégories'
-            form:  # <-- 'form' is applied to both 'new' and 'edit' views
-                fields:
-                    #- { property: 'virtualFilename', type: 'file_upload', type_options: {upload_dir: 'templates/imagescat',upload_filename: '[uuid].[extension]' }}
-                    - { property: 'Path', type: 'file_upload', type_options: { upload_dir: 'templates/imagescat/' } }
-                    - 'Category'

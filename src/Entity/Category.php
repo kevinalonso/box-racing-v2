@@ -33,10 +33,6 @@ class Category
      */
     private $Announcements;
 
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\ImageCategory", mappedBy="Category")
-     */
-    private $Images;
 
     public function getId(): ?int
     {
@@ -77,7 +73,6 @@ class Category
     public function __construct()
     {
         $this->Announcements = new ArrayCollection();
-        $this->Images = new ArrayCollection();
     }
 
     /**
@@ -86,18 +81,5 @@ class Category
     public function getAnnouncements()
     {
         return $this->Announcements;
-    }
-
-    /**
-     * @return Collection|Image[]
-     */
-    public function getImages()
-    {
-        return $this->Images;
-    }
-
-    public function __toString()
-    {
-        return $this->Name;
     }
 }

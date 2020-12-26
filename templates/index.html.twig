@@ -5,7 +5,7 @@
 
       <div class="row">
         <div class="col-lg-3">
-          <h1 class="my-4">One Minute</h1>
+          <h1 class="my-4">Box Racing</h1>
           <div class="list-group">
           {% for category in categories %}
               {% if category.IsActive %}
@@ -43,32 +43,24 @@
             <span class="sr-only">Next</span>
           </a>
         </div>
-      </div>
 
-
-      <div class="row col-lg-10 d-flex flex-row-reverse ml-2">
-        {% for announcement in announcements %}
-          {% if announcement.IsActive %}
-
-            <div class="col-lg-4 col-md-6 mb-4 ml-5">
-              <div class="card h-100">
-                <!--http://placehold.it/700x400-->
-                <a href="#"><img class="card-img-top" src="{{ announcement.image }}" alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="{{ path('announcement', {'id': announcement.id}) }}">{{announcement.Title}}</a>
-                  </h4>
-                  <h5>{{announcement.Price}}€</h5>
-                  <p class="card-text">{{announcement.Description|length > 200 ? announcement.Description|slice(0, 200) ~ '...' : announcement.Description}}</p>
-                </div>
-                <div class="card-footer">
-                  <small class="text-muted"></small>
-                </div>
-              </div>
+         <div class="row">
+          
+          
+            <div class="map-responsive d-inline col-md-6">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2644.3970077927193!2d-4.2911038!3d48.4872787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4816ad8363b3a9ed%3A0x5aef7fab7d331f08!2s4+Rue+H%C3%A9l%C3%A8ne+Boucher%2C+29260+Ploudaniel!5e0!3m2!1sfr!2sfr!4v1430740746223" width="400" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
 
-          {% endif %}
-        {% endfor %}
+            <div class="d-inline details col-md-6">
+              <h3 class="product-title">Retrouvez-nous 02.98.80.20.46</h3>
+              <p class="product-description">4 rue Hélène Boucher – ZI Mescoden 29260 PLOUDANIEL</p>
+              <h3 class="product-title">Horraires</h3>
+              <p class="product-description">Du mardi au vendredi : 9h00 à 12h00 – 14h00 à 19h00</p>
+              <p class="product-description">Le samedi: 9h00 à 12h00 – 14h00 à 18h30</p>
+            </div>
+
+         </div>
+
       </div>
 
   </div>
