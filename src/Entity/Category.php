@@ -82,4 +82,9 @@ class Category
     {
         return $this->Announcements;
     }
+
+    public function __toString()
+    {   
+        return $this->Name;
+    }
 }
