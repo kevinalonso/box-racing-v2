@@ -29,12 +29,17 @@ class Category
     private $IsActive;
 
     /**
+     * @ORM\Column(type="boolean")
+     */
+    private $IsStatic;
+
+    /**
      * @ORM\OneToMany(targetEntity="App\Entity\Announcement", mappedBy="Category")
      */
     private $Announcements;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\StaticPage", mappedBy="Static")
+     * @ORM\OneToMany(targetEntity="App\Entity\StaticPage", mappedBy="Category")
      */
     private $StaticPages;
 
@@ -71,6 +76,18 @@ class Category
     public function setIsActive(bool $IsActive): self
     {
         $this->IsActive = $IsActive;
+
+        return $this;
+    }
+
+    public function getIsStatic(): ?bool
+    {
+        return $this->IsStatic;
+    }
+
+    public function setIsStatic(bool $IsStatic): self
+    {
+        $this->IsStatic = $IsStatic;
 
         return $this;
     }

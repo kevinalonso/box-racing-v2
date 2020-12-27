@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Announcement;
 use App\Entity\Category;
+use App\Entity\StaticPage;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -43,6 +44,20 @@ class CategoryController extends AbstractController
     	return $this->render('category.html.twig', [
             'announcements' => $announcements,
             'titleCat' => $catName
+        ]);
+    }
+
+    /**
+    * @Route("/category/static/{id}")
+    */
+    public function static(int $id) : Response
+    {
+
+        $static = $this->getDoctrine()->getRepository(StaticPage::class)
+            ->getStaticFromCategory($id);
+
+        return $this->render('staticpage.html.twig', [
+            'static' => $static
         ]);
     }
 }

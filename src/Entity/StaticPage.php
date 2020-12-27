@@ -23,7 +23,7 @@ class StaticPage
     private $Content;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="Announcements")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="StaticPages")
      */
     private $Category;
 

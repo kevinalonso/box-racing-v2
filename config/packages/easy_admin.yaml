@@ -11,6 +11,7 @@ easy_admin:
                 fields:
                     - 'Name'
                     - 'IsActive'
+                    - 'IsStatic'
 
         Announcement:
             class: App\Entity\Announcement

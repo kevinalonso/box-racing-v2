@@ -19,6 +19,14 @@ class StaticPageRepository extends ServiceEntityRepository
         parent::__construct($registry, StaticPage::class);
     }
 
+    public function getStaticFromCategory(int $idCat): array
+    {
+        $dql = 'SELECT a FROM App\Entity\StaticPage a WHERE a.Category =:idCat';
+        $query = $this->getEntityManager()->createQuery($dql)
+            ->setParameter('idCat',$idCat);
+        return $query->execute();
+    }
+
     // /**
     //  * @return StaticPage[] Returns an array of StaticPage objects
     //  */

@@ -9,7 +9,11 @@
           <div class="list-group">
           {% for category in categories %}
               {% if category.IsActive %}
-                <a href="{{ path('category', {'id': category.id}) }}" class="list-group-item">{{category.Name}}</a>
+                {% if category.IsStatic %}
+                  <a href="{{ path('static', {'id': category.id}) }}" class="list-group-item">{{category.Name}}</a>
+                {% else %}
+                  <a href="{{ path('category', {'id': category.id}) }}" class="list-group-item">{{category.Name}}</a>
+                {% endif %}
               {% endif %}
           {% endfor %}
         </div>
