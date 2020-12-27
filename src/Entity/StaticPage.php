@@ -22,6 +22,23 @@ class StaticPage
      */
     private $Content;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="Announcements")
+     */
+    private $Category;
+
+    public function getCategory(): ?Category
+    {
+        return $this->Category;
+    }
+
+    public function setCategory(?Category $Category): self
+    {
+        $this->Category = $Category;
+
+        return $this;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

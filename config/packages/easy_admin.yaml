@@ -46,3 +46,11 @@ easy_admin:
                     - 'City'
                     - 'IsActive'
                     - 'IsPro'
+                    
+        StaticPage:
+            class: App\Entity\StaticPage
+            label: 'Pages Statiques'
+            form:
+                fields:
+                    - 'Content'
+                    - 'Category'

@@ -33,6 +33,11 @@ class Category
      */
     private $Announcements;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\StaticPage", mappedBy="Static")
+     */
+    private $StaticPages;
+
 
     public function getId(): ?int
     {
@@ -73,6 +78,7 @@ class Category
     public function __construct()
     {
         $this->Announcements = new ArrayCollection();
+        $this->StaticPages = new ArrayCollection();
     }
 
     /**
@@ -81,6 +87,14 @@ class Category
     public function getAnnouncements()
     {
         return $this->Announcements;
+    }
+
+    /**
+     * @return Collection|StaticPage[]
+     */
+    public function getStaticPages()
+    {
+        return $this->StaticPages;
     }
 
     public function __toString()
