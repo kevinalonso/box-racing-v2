@@ -1,4 +1,8 @@
 easy_admin:
+    design:
+        form_theme:
+            - '@EasyAdmin/form/bootstrap_4.html.twig'
+            - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
     formats:
         date:     'd/m/Y'
         time:     'H:i'
@@ -53,5 +57,5 @@ easy_admin:
             label: 'Pages Statiques'
             form:
                 fields:
-                    - 'Content'
+                    -  { property: 'Content', type: 'fos_ckeditor'}
                     - 'Category'
