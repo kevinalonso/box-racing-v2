@@ -21,8 +21,8 @@
 							<h4 class="card-title">
 							  <a class="card-announcement" href="{{ path('announcement', {'id': announcement.id}) }}">{{announcement.Title}} {{announcement.IsPermisA2 ? 'Permis A2' : ''}}</a>
 							</h4>
-							<h5>{{announcement.Price}}€</h5>
-							<h5 class="card-text">{{announcement.Km}} Km</h5>
+							<h5>Prix: {{announcement.Price}}€</h5>
+							<h5 class="card-text">KM: {{announcement.Km}}</h5>
 						</div>
 						<div class="card-footer">
 							<small class="text-muted"></small>
