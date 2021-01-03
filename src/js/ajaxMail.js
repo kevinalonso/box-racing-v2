@@ -11,7 +11,7 @@ function sendMailClick(){
 
 		$.ajax({
 	    type: "POST",
-	    url: "/oneminute/public/sendmail",
+	    url: "/box-racing-v2/public/sendmail",
 	    data: {
 		    	email: email,
 	            name: name,
