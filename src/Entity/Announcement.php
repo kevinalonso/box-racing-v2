@@ -72,6 +72,11 @@ class Announcement
      */
     private $Image4;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $Km;
+
 
     public function getId(): ?int
     {
@@ -124,6 +129,18 @@ class Announcement
         $this->Image4 = $Image4;
 
         return $this;
+    }
+
+     public function setKm(string $Km): self
+    {
+        $this->Km = $Km;
+
+        return $this;
+    }
+
+    public function getKm(): ?string
+    {
+        return $this->Km;
     }
 
 

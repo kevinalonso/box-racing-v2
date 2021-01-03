@@ -55,3 +55,7 @@ a{
 .img-thumbnail-override{
   max-width: 32.79% !important;
 }
+
+body{
+  overflow-x: hidden !important;
+}

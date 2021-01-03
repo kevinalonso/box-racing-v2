@@ -10,19 +10,19 @@
 		
 	</div>
 
-	<div class="row">
+	<div class="row container">
 		{% for announcement in announcements %}
 			{% if announcement.IsActive %}
-				<div class="col-lg-4 col-md-6 mb-4 ml-5">
+				<div class="col-lg-4 col-md-6 mb-4">
 					<div class="card h-100">
 						<!--http://placehold.it/700x400-->
-						<img class="card-img-top" src="../../templates/imagesmotos/{{ asset(announcement.Image1) |split('/')|last }}" alt="">
+						<a href="{{ path('announcement', {'id': announcement.id}) }}"><img class="card-img-top" src="../../templates/imagesmotos/{{ asset(announcement.Image1) |split('/')|last }}" alt=""></a>
 						<div class="card-body">
 							<h4 class="card-title">
 							  <a class="card-announcement" href="{{ path('announcement', {'id': announcement.id}) }}">{{announcement.Title}} {{announcement.IsPermisA2 ? 'Permis A2' : ''}}</a>
 							</h4>
 							<h5>{{announcement.Price}}€</h5>
-							<span class="card-text">{{announcement.Description|length > 200 ? announcement.Description|striptags|slice(0, 200) ~ '...' : announcement.Description|striptags}}</span>
+							<h5 class="card-text">{{announcement.Km}} Km</h5>
 						</div>
 						<div class="card-footer">
 							<small class="text-muted"></small>

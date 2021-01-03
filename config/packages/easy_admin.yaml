@@ -24,6 +24,7 @@ easy_admin:
                 fields:
                     - {property: 'Title', label: 'Titre'}
                     - {property: 'Cylindrical', label: 'Cylindrée'}
+                    - {property: 'Km', label: 'Kilomètres'}
                     - {property: 'Description', type: 'fos_ckeditor', label: 'Description'}
                     - {property: 'Price', label: 'Prix'}
                     - {property: 'DatePublish', label: 'Date de mise en vente'}
