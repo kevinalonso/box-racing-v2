@@ -22,19 +22,20 @@ easy_admin:
             label: 'Annonces'
             form:  # <-- 'form' is applied to both 'new' and 'edit' views
                 fields:
-                    - 'Title'
-                    - 'Cylindrical'
-                    - 'Description'
-                    - 'DatePublish'
-                    - 'IsActive'
-                    - 'IsPermisA2'
-                    - 'Price'
-                    - { property: 'Image1', type: 'file_upload', type_options: { upload_dir: 'templates/imagesmotos/' } }
-                    - { property: 'Image2', type: 'file_upload', type_options: { upload_dir: 'templates/imagesmotos/' } }
-                    - { property: 'Image3', type: 'file_upload', type_options: { upload_dir: 'templates/imagesmotos/' } }
-                    - { property: 'Image4', type: 'file_upload', type_options: { upload_dir: 'templates/imagesmotos/' } }
-                    - 'Category'
-                    - 'User'
+                    - {property: 'Title', label: 'Titre'}
+                    - {property: 'Cylindrical', label: 'Cylindrée'}
+                    - {property: 'Description', type: 'fos_ckeditor', label: 'Description'}
+                    - {property: 'Price', label: 'Prix'}
+                    - {property: 'DatePublish', label: 'Date de mise en vente'}
+                    - {property: 'IsActive', label: 'Annonce visible'}
+                    - {property: 'IsPermisA2', label: Permis A2'}
+                    - {property: 'DatePublish', label: 'Date de mise en vente'}
+                    - {property: 'Image1', type: 'file_upload', type_options: { upload_dir: 'templates/imagesmotos/' },label: 'Image Principale'}
+                    - {property: 'Image2', type: 'file_upload', type_options: { upload_dir: 'templates/imagesmotos/' },label: 'Image 1'}
+                    - {property: 'Image3', type: 'file_upload', type_options: { upload_dir: 'templates/imagesmotos/' },label: 'Image 2'}
+                    - {property: 'Image4', type: 'file_upload', type_options: { upload_dir: 'templates/imagesmotos/' },label: 'Image 3'}
+                    - {property: 'Category', label: 'Choisir Motos Occasion'}
+                    - {property: 'User', label: 'Mettre Box Racing'}
 
         User:
             class: App\Entity\User

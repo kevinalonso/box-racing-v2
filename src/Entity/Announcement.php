@@ -73,6 +73,11 @@ class Announcement
     private $Image4;
 
 
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
     public function getImage1(): ?string
     {
         return $this->Image1;

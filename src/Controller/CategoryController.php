@@ -25,7 +25,7 @@ class CategoryController extends AbstractController
             $catName = $announcements[0];
 
             $cat = $this->getDoctrine()->getRepository(Category::class)
-            ->getCategory(2);
+            ->getCategory($id);
 
             return $this->render('category.html.twig', [
                 'announcements' => $announcements,
@@ -36,7 +36,7 @@ class CategoryController extends AbstractController
         } else {
             return $this->render('category.html.twig', [
                 'announcements' => $announcements,
-                'titleCat' => 'Aucune annonce pour cette catégorie'
+                'titleCat' => 'Pas de motos d\'occasion en vente pour le moment'
             ]);
         }
         
