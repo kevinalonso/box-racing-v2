@@ -23,8 +23,7 @@
                     <!--Grid column-->
                     <div class="col-md-6">
                         <div class="md-form mb-0">
-                            <input type="text" id="name" name="name" class="form-control" required="required">
-                            <label for="name" class="">Votre Nom</label>
+                            <input type="text" id="name" name="name" placeholder="Votre Nom" class="form-control" required="required">
                         </div>
                     </div>
                     <!--Grid column-->
@@ -32,35 +31,31 @@
                     <!--Grid column-->
                     <div class="col-md-6">
                         <div class="md-form mb-0">
-                            <input type="text" id="email" name="email" class="form-control" required="required">
-                            <label for="email" class="">Votre Email</label>
+                            <input type="text" id="email" name="email" placeholder="Votre Email" class="form-control" required="required">
                         </div>
                     </div>
                     <!--Grid column-->
-
                 </div>
                 <!--Grid row-->
 
                 <!--Grid row-->
-                <div class="row">
+                <div class="row mt-5">
                     <div class="col-md-12">
                         <div class="md-form mb-0">
-                            <input type="text" id="subject" required="required" name="subject" class="form-control">
-                            <label for="subject" class="">Objet du mail</label>
+                            <input type="text" id="subject" required="required" name="subject" class="form-control" placeholder="Objet de votre demande">
                         </div>
                     </div>
                 </div>
                 <!--Grid row-->
 
                 <!--Grid row-->
-                <div class="row">
+                <div class="row mt-5">
 
                     <!--Grid column-->
                     <div class="col-md-12">
 
                         <div class="md-form">
-                            <textarea type="text" required="required" id="message" name="message" rows="10" class="form-control md-textarea"></textarea>
-                            <label for="message">Votre Message</label>
+                            <textarea type="text" required="required" id="message" name="message" rows="10" class="form-control md-textarea" placeholder="Votre Message"></textarea>
                         </div>
 
                     </div>
@@ -69,13 +64,13 @@
 
             </form>
 
-            <div class="text-center text-md-left">
+            <div class="text-center text-md-left mt-5">
                 <a class="btn btn-primary" onclick="sendMailClick()">Envoyer</a>
             </div>
             <div class="status mt-5">
                <div id="alert-mail" style="visibility: hidden;" class="alert alert-success" role="alert">
                     Votre Email a été envoyé !
-                </div>
+               </div>
             </div>
         </div>
         <!--Grid column-->
