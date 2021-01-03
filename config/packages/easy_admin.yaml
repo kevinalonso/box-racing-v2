@@ -22,6 +22,7 @@ easy_admin:
             label: 'Annonces'
             form:  # <-- 'form' is applied to both 'new' and 'edit' views
                 fields:
+                    - {property: 'IsSold', label: 'Vendu'}
                     - {property: 'Title', label: 'Titre'}
                     - {property: 'Cylindrical', label: 'Cylindrée'}
                     - {property: 'Km', label: 'Kilomètres'}

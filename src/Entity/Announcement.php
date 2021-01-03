@@ -43,6 +43,11 @@ class Announcement
     private $IsPermisA2;
 
     /**
+     * @ORM\Column(type="boolean")
+     */
+    private $IsSold;
+
+    /**
      * @ORM\Column(type="string", length=255)
      */
     private $Cylindrical;
@@ -291,6 +296,18 @@ class Announcement
     public function setIsActive(bool $IsActive): self
     {
         $this->IsActive = $IsActive;
+
+        return $this;
+    }
+
+    public function getIsSold(): ?bool
+    {
+        return $this->IsSold;
+    }
+
+    public function setIsSold(bool $IsSold): self
+    {
+        $this->IsSold = $IsSold;
 
         return $this;
     }

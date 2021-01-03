@@ -16,10 +16,22 @@
 				<div class="col-lg-4 col-md-6 mb-4">
 					<div class="card h-100">
 						<!--http://placehold.it/700x400-->
-						<a href="{{ path('announcement', {'id': announcement.id}) }}"><img class="card-img-top" src="../../templates/imagesmotos/{{ asset(announcement.Image1) |split('/')|last }}" alt=""></a>
+						{% if announcement.IsSold %}
+							<span class="notify-badge">Vendu</span>
+							<img class="card-img-top" src="../../templates/imagesmotos/{{ asset(announcement.Image1) |split('/')|last }}" alt="">
+						{% elseif announcement.IsSold == false %}
+							<a href="{{ path('announcement', {'id': announcement.id}) }}">
+								<img class="card-img-top" src="../../templates/imagesmotos/{{ asset(announcement.Image1) |split('/')|last }}" alt="">
+							</a>
+						{% endif %}
+						
 						<div class="card-body">
 							<h4 class="card-title">
-							  <a class="card-announcement" href="{{ path('announcement', {'id': announcement.id}) }}">{{announcement.Title}} {{announcement.IsPermisA2 ? 'Permis A2' : ''}}</a>
+							{% if announcement.IsSold %}
+								<span class="card-announcement" href="{{ path('announcement', {'id': announcement.id}) }}">{{announcement.Title}} {{announcement.IsPermisA2 ? 'Permis A2' : ''}}</span>
+							{% elseif announcement.IsSold == false %}
+								<a class="card-announcement" href="{{ path('announcement', {'id': announcement.id}) }}">{{announcement.Title}} {{announcement.IsPermisA2 ? 'Permis A2' : ''}}</a>
+							{% endif %}
 							</h4>
 							<h5>Prix: {{announcement.Price}}€</h5>
 							<h5 class="card-text">KM: {{announcement.Km}}</h5>
