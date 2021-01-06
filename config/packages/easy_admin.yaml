@@ -36,6 +36,7 @@ easy_admin:
                     - {property: 'Image2', type: 'file_upload', type_options: { upload_dir: 'templates/imagesmotos/' },label: 'Image 1'}
                     - {property: 'Image3', type: 'file_upload', type_options: { upload_dir: 'templates/imagesmotos/' },label: 'Image 2'}
                     - {property: 'Image4', type: 'file_upload', type_options: { upload_dir: 'templates/imagesmotos/' },label: 'Image 3'}
+                    - {property: 'Image5', type: 'file_upload', type_options: { upload_dir: 'templates/imagesmotos/' },label: 'Image 4'}
                     - {property: 'Category', label: 'Choisir Motos Occasion'}
                     - {property: 'User', label: 'Mettre Box Racing'}
 

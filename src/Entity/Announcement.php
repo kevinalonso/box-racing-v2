@@ -80,6 +80,11 @@ class Announcement
     /**
      * @ORM\Column(type="string", length=255)
      */
+    private $Image5;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
     private $Km;
 
 
@@ -132,6 +137,18 @@ class Announcement
     public function setImage4(string $Image4): self
     {
         $this->Image4 = $Image4;
+
+        return $this;
+    }
+
+    public function getImage5(): ?string
+    {
+        return $this->Image5;
+    }
+
+    public function setImage5(string $Image5): self
+    {
+        $this->Image5 = $Image5;
 
         return $this;
     }
@@ -195,6 +212,12 @@ class Announcement
     {
         //Only keep last part of filepath
         $this->setImage4(basename($Image4));
+    }
+
+    public function setVirtualFilename5($Image5)
+    {
+        //Only keep last part of filepath
+        $this->setImage5(basename($Image5));
     }
 
     /////////////////////////Link between Annnouncement & User////////////////////
