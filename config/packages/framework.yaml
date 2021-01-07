@@ -1,6 +1,7 @@
 # see https://symfony.com/doc/current/reference/configuration/framework.html
 framework:
-    secret: '%env(APP_SECRET)%'
+    secret: 'c85f0998dbe8111b3a296ee7448cbe45' 
+    #'%env(APP_SECRET)%'
     fragments: { path: /_fragment }
     #csrf_protection: true
     #http_method_override: true

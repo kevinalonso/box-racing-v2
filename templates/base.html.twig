@@ -1,21 +1,39 @@
 <!DOCTYPE html>
 <html>
     <head>
+
+    	<!--SEO-->
+    	<meta name="robots" content="index"/>
+    	<meta name="googlebot" content="index"/>
+    	<link rel="canonical" href="https://box-racing.fr/" />
+		<meta property="og:locale" content="fr_FR" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Box Racing - BOX RACING" />
+		<meta property="og:description" content="Rachat cash / Reprise / Dépôt vente Prestations atelier Dépannage / Prestations diverses Motos neuves" />
+		<meta property="og:url" content="https://box-racing.fr/" />
+		<meta property="og:site_name" content="BOX RACING" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:description" content="Rachat cash / Reprise / Dépôt vente Prestations atelier Dépannage / Prestations diverses Motos neuves" />
+		<meta name="twitter:title" content="Box Racing" />
+    	<!--End SEO-->
+
         <meta charset="UTF-8">
   		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   		<meta name="description" content="">
   		<meta name="author" content="">
   		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <title>{% block title %}OneMinute{% endblock %}</title>
+        <title>{% block title %}Box-Racing{% endblock %}</title>
 
         {% block stylesheets %}
 
-        	<link rel="stylesheet" href="/oneminute/templates/style/css/bootstrap-grid.css">
-        	<link rel="stylesheet" href="/oneminute/templates/style/css/bootstrap-reboot.css">
-        	<link rel="stylesheet" href="/oneminute/templates/style/css/bootstrap.css">
-        	<link rel="stylesheet" href="/oneminute/templates/style/css/shop-homepage.css">
-        	<link rel="stylesheet" href="/oneminute/templates/style/css/bootstrap-extras-margins-padding.css">
-        	<link rel="stylesheet" href="/oneminute/templates/style/css/style.css">
+        	<link rel="stylesheet" href="/templates/style/css/bootstrap-grid.css">
+        	<link rel="stylesheet" href="/templates/style/css/bootstrap-reboot.css">
+        	<link rel="stylesheet" href="/templates/style/css/bootstrap.css">
+        	<link rel="stylesheet" href="/templates/style/css/shop-homepage.css">
+        	<link rel="stylesheet" href="/templates/style/css/bootstrap-extras-margins-padding.css">
+        	<link rel="stylesheet" href="/templates/style/css/style.css">
+        	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css"/>
+        	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         	
         {% endblock %}
     </head>
@@ -23,7 +41,7 @@
     	<!-- Navigation -->
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 			<div class="container">
-			  <a class="navbar-brand" href="{{ path('index') }}">One minute</a>
+			  <a class="navbar-brand" href="{{ path('index') }}"><img class="img-responsive" style="width:11%;" src="/templates/images/logo-ruban.png"/></a>
 			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 			    <span class="navbar-toggler-icon"></span>
 			  </button>
@@ -34,20 +52,19 @@
 			          <span class="sr-only">(current)</span>
 			        </a>
 			      </li>
-			      <li class="nav-item">
+			      <!--<li class="nav-item">
 			      	{% if app.user %}
 			      		<a class="nav-link" href="{{ path('account') }}">Mon Compte</a>
 			      	{% else %}
 			      		<a class="nav-link" href="{{ path('login') }}">Connexion</a>	
 			      	{% endif %}
-			       
-			      </li>
-			      <li class="nav-item">
+			      </li>-->
+			      <!--<li class="nav-item">
 			        <a class="nav-link" href="{{ path('declaration') }}">Déclarer Revenues</a>
-			      </li>
-			      <li class="nav-item">
+			      </li>-->
+			      <!--<li class="nav-item">
 			        <a class="nav-link" href="#">Nos services</a>
-			      </li>
+			      </li>-->
 			      <li class="nav-item">
 			        <a class="nav-link" href="{{ path('contact') }}">Contact</a>
 			      </li>
@@ -61,17 +78,26 @@
 
         {% endblock %}
 
-		<footer class="footer py-5 bg-dark">
+		<footer class="footer py-5 bg-dark mt-5">
 			<div class="container">
-			  <p class="m-0 text-center text-white">Copyright &copy; One Minute 2020</p>
+				<a class="btn btn-social-icon btn-twitter" href="{{ path('contact') }}">
+					<span class="fa fa-envelope" aria-hidden="true"></span>
+				</a>
+				<a class="btn btn-social-icon btn-facebook" href="https://www.facebook.com/Box-Racing-1582216218709761/?ref=br_rs">
+					<span class="fa fa-facebook"></span>
+				</a>
+				<a class="btn btn-social-icon btn-instagram" href="https://www.instagram.com/boxracingmoto/">
+					<span class="fa fa-instagram"></span>
+				</a>
+			  	<p class="m-0 text-center text-white">Copyright &copy; Box Racing 2020</p>
 			</div>
 		<!-- /.container -->
 		</footer>
 
         {% block javascripts %}
-        	<script type="text/javascript" src="/oneminute/templates/style/jquery/jquery.min.js"></script>
-        	<script type="text/javascript" src="/oneminute/templates/style/js/bootstrap.js"></script>
-        	<script type="text/javascript" src="/oneminute/templates/style/js/bootstrap.bundle.min.js"></script>
+        	<script type="text/javascript" src="/templates/style/jquery/jquery.min.js"></script>
+        	<script type="text/javascript" src="/templates/style/js/bootstrap.js"></script>
+        	<script type="text/javascript" src="/templates/style/js/bootstrap.bundle.min.js"></script>
         {% endblock %}
     </body>
 </html>

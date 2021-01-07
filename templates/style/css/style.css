@@ -19,3 +19,67 @@
   -moz-border-radius: 50% !important;
   border-radius: 50% !important;
 }
+
+.map-responsive{
+    overflow:hidden;
+    padding-bottom:50%;
+    position:relative;
+    height:0;
+}
+.map-responsive iframe{
+    left:0;
+    top:0;
+    height:71%;
+    width:100%;
+    position:absolute;
+}
+
+.list-group-item{
+  background-color: black !important;
+  border: 1px solid rgb(84 81 81 / 78%) !important;
+}
+
+a{
+  color: white !important;
+}
+
+.card-home{
+  background-color: #3c37379e;
+  color: white;
+}
+
+.card-announcement{
+  color: black !important;
+}
+
+.img-thumbnail-override{
+  max-width: 32.79% !important;
+}
+
+body{
+  overflow-x: hidden !important;
+}
+
+.btn-instagram{
+  background-color: #f94877 !important;
+}
+
+.notify-badge{
+    position: absolute;
+    right:-20px;
+    top:-15px;
+    background:red;
+    text-align: center;
+    border-radius: 30px 30px 30px 30px;
+    color:white;
+    padding:5px 10px;
+    font-size:20px;
+}
+
+.bg-dark{
+  background-color: #101516 !important;
+}
+
+.white{
+  color: white;
+}

@@ -29,14 +29,20 @@ class Category
     private $IsActive;
 
     /**
+     * @ORM\Column(type="boolean")
+     */
+    private $IsStatic;
+
+    /**
      * @ORM\OneToMany(targetEntity="App\Entity\Announcement", mappedBy="Category")
      */
     private $Announcements;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\ImageCategory", mappedBy="Category")
+     * @ORM\OneToMany(targetEntity="App\Entity\StaticPage", mappedBy="Category")
      */
-    private $Images;
+    private $StaticPages;
+
 
     public function getId(): ?int
     {
@@ -74,10 +80,22 @@ class Category
         return $this;
     }
 
+    public function getIsStatic(): ?bool
+    {
+        return $this->IsStatic;
+    }
+
+    public function setIsStatic(bool $IsStatic): self
+    {
+        $this->IsStatic = $IsStatic;
+
+        return $this;
+    }
+
     public function __construct()
     {
         $this->Announcements = new ArrayCollection();
-        $this->Images = new ArrayCollection();
+        $this->StaticPages = new ArrayCollection();
     }
 
     /**
@@ -89,15 +107,15 @@ class Category
     }
 
     /**
-     * @return Collection|Image[]
+     * @return Collection|StaticPage[]
      */
-    public function getImages()
+    public function getStaticPages()
     {
-        return $this->Images;
+        return $this->StaticPages;
     }
 
     public function __toString()
-    {
+    {   
         return $this->Name;
     }
 }

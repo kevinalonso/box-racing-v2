@@ -1,4 +1,8 @@
 easy_admin:
+    design:
+        form_theme:
+            - '@EasyAdmin/form/bootstrap_4.html.twig'
+            - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
     formats:
         date:     'd/m/Y'
         time:     'H:i'
@@ -11,20 +15,30 @@ easy_admin:
                 fields:
                     - 'Name'
                     - 'IsActive'
+                    - 'IsStatic'
 
         Announcement:
             class: App\Entity\Announcement
             label: 'Annonces'
             form:  # <-- 'form' is applied to both 'new' and 'edit' views
                 fields:
-                    - 'Title'
-                    - 'Description'
-                    - 'DatePublish'
-                    - 'IsActive'
-                    - 'Price'
-                    - 'Image'
-                    - 'Category'
-                    - 'User'
+                    - {property: 'IsSold', label: 'Vendu'}
+                    - {property: 'Title', label: 'Titre'}
+                    - {property: 'Cylindrical', label: 'Cylindrée'}
+                    - {property: 'Km', label: 'Kilomètres'}
+                    - {property: 'Description', type: 'fos_ckeditor', label: 'Description'}
+                    - {property: 'Price', label: 'Prix'}
+                    - {property: 'DatePublish', label: 'Date de mise en vente'}
+                    - {property: 'IsActive', label: 'Annonce visible'}
+                    - {property: 'IsPermisA2', label: Permis A2'}
+                    - {property: 'DatePublish', label: 'Date de mise en vente'}
+                    - {property: 'Image1', type: 'file_upload', type_options: { upload_dir: 'templates/imagesmotos/' },label: 'Image Principale'}
+                    - {property: 'Image2', type: 'file_upload', type_options: { upload_dir: 'templates/imagesmotos/' },label: 'Image 1'}
+                    - {property: 'Image3', type: 'file_upload', type_options: { upload_dir: 'templates/imagesmotos/' },label: 'Image 2'}
+                    - {property: 'Image4', type: 'file_upload', type_options: { upload_dir: 'templates/imagesmotos/' },label: 'Image 3'}
+                    - {property: 'Image5', type: 'file_upload', type_options: { upload_dir: 'templates/imagesmotos/' },label: 'Image 4'}
+                    - {property: 'Category', label: 'Choisir Motos Occasion'}
+                    - {property: 'User', label: 'Mettre Box Racing'}
 
         User:
             class: App\Entity\User
@@ -41,22 +55,11 @@ easy_admin:
                     - 'City'
                     - 'IsActive'
                     - 'IsPro'
-
-        Sale:
-            class: App\Entity\Sale
-            label: 'Transactions'
+                    
+        StaticPage:
+            class: App\Entity\StaticPage
+            label: 'Pages Statiques'
             form:
                 fields:
-                    - 'SellerName'
-                    - 'BuyerName'
-                    - 'DateofSale'
-                    - 'Price'
-
-        ImageCategory:
-            class: App\Entity\ImageCategory
-            label: 'Images Catégories'
-            form:  # <-- 'form' is applied to both 'new' and 'edit' views
-                fields:
-                    #- { property: 'virtualFilename', type: 'file_upload', type_options: {upload_dir: 'templates/imagescat',upload_filename: '[uuid].[extension]' }}
-                    - { property: 'Path', type: 'file_upload', type_options: { upload_dir: 'templates/imagescat/' } }
+                    -  { property: 'Content', type: 'fos_ckeditor'}
                     - 'Category'

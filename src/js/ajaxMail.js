@@ -6,17 +6,19 @@ function sendMailClick(){
 	var name = $("#name").val();
 	var obj = $("#subject").val();
 	var msg = $("#message").val();
+	var pj = $("#pj").val();
 
 	if (email !== null && name !== null && obj !== null && msg !== null ) {
 
 		$.ajax({
 	    type: "POST",
-	    url: "/oneminute/public/sendmail",
+	    url: "/public/sendmail",
 	    data: {
 		    	email: email,
 	            name: name,
 	            obj: obj,
-	            msg: msg
+	            msg: msg,
+	            pj: pj
 	    	}
 		})
 		.done(function(data){
