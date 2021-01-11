@@ -75,3 +75,11 @@ body{
     padding:5px 10px;
     font-size:20px;
 }
+
+.bg-dark{
+  background-color: #101516 !important;
+}
+
+.white{
+  color: white;
+}

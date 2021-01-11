@@ -1,3 +1,10 @@
 swiftmailer:
-    url: '%env(MAILER_URL)%'
+    transport: sendmail
+    username: contact@box-racing.fr
+    password: '@Boxracing29'
+    auth_mode: login
+    disable_delivery: false
+    encryption: ssl
+    port: 465
+    host: ssl0.ovh.net
     spool: { type: 'memory' }

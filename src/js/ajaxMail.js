@@ -6,17 +6,23 @@ function sendMailClick(){
 	var name = $("#name").val();
 	var obj = $("#subject").val();
 	var msg = $("#message").val();
+	var pj = $("#pj").val();
 
 	if (email !== null && name !== null && obj !== null && msg !== null ) {
 
 		$.ajax({
 	    type: "POST",
+<<<<<<< HEAD
 	    url: "/box-racing-v2/public/sendmail",
+=======
+	    url: "/public/sendmail",
+>>>>>>> master
 	    data: {
 		    	email: email,
 	            name: name,
 	            obj: obj,
-	            msg: msg
+	            msg: msg,
+	            pj: pj
 	    	}
 		})
 		.done(function(data){

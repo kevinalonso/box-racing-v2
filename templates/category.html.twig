@@ -33,7 +33,9 @@
 								<a class="card-announcement" href="{{ path('announcement', {'id': announcement.id}) }}">{{announcement.Title}} {{announcement.IsPermisA2 ? 'Permis A2' : ''}}</a>
 							{% endif %}
 							</h4>
-							<h5>Prix: {{announcement.Price}}€</h5>
+							
+							<h5>Prix: {{ (announcement.IsSold) ? "0" : announcement.Price}}€</h5>
+							
 							<h5 class="card-text">KM: {{announcement.Km}}</h5>
 						</div>
 						<div class="card-footer">
