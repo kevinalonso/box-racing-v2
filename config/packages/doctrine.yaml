@@ -1,7 +1,7 @@
 doctrine:
     dbal:
-        url: mysql://boxracinnnbox:passord@server:3306/boxracinnnbox
-        #mysql://boxracinnnbox:password@serveur:3306/boxracinnnbox
+        url: mysql://boxracinnnbox:Boxracing29@boxracinnnbox.mysql.db:3306/boxracinnnbox
+        #mysql://boxracinnnbox:Boxracing29@boxracinnnbox.mysql.db:3306/boxracinnnbox
         #mysql://root:@127.0.0.1:3306/boxracingv2?serverVersion=mariadb-10.4.11
         #'%env(resolve:DATABASE_URL)%'
 

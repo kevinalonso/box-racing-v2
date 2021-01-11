@@ -1,7 +1,7 @@
 swiftmailer:
     transport: sendmail
     username: contact@box-racing.fr
-    password: '******'
+    password: '@Boxracing29'
     auth_mode: login
     disable_delivery: false
     encryption: ssl
