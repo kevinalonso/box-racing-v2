@@ -33,12 +33,8 @@ class ContactController extends AbstractController
         $message = (new \Swift_Message($obj))
             ->setFrom($email)
             ->setTo('contact@box-racing.fr')
-<<<<<<< HEAD
-            ->setBody($msg);
-=======
             ->setBody($msg)
             ->attach(\Swift_Attachment::fromPath($pj));
->>>>>>> master
 
         $mailer->send($message);
         
