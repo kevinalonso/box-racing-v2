@@ -10,46 +10,86 @@
 		
 	</div>
 
-	<section filter="rating">
-		rrrrrrrrrrrrrr
-	</section>
-
 	<div class="row container col-12 ml-1">
-		{% for announcement in announcements %}
-			{% if announcement.IsActive %}
-				<div class="col-lg-4 col-md-6 mb-4">
-					<div class="card h-100">
-						<!--http://placehold.it/700x400-->
-						{% if announcement.IsSold %}
-							<span class="notify-badge">Vendu</span>
-							<img class="card-img-top" src="../../templates/imagesmotos/{{ asset(announcement.Image1) |split('/')|last }}" alt="">
-						{% elseif announcement.IsSold == false %}
-							<a href="{{ path('announcement', {'id': announcement.id}) }}">
-								<img class="card-img-top" src="../../templates/imagesmotos/{{ asset(announcement.Image1) |split('/')|last }}" alt="">
-							</a>
-						{% endif %}
-						
-						<div class="card-body">
-							<h4 class="card-title">
+		<div class="row ml-2 col-12">
+			<h6 class="font-weight-bold mb-3 col-2" style="color:white;">Filtre</h6>
+
+			<div class="form-check pl-0 mb-3 col-2">
+				 <input type="checkbox" class="filter-option form-check-input filled-in" id="A2"/>
+				 <label class="brand form-check-label small text-uppercase card-link-secondary" for="A2">Permis A2</label>
+			</div>
+
+			<div class="form-check pl-0 mb-3 col-2">
+				 <input type="checkbox" class="filter-option form-check-input filled-in" id="honda"/>
+				 <label class="brand form-check-label small text-uppercase card-link-secondary" for="honda">Honda</label>
+			</div>
+
+			<div class="form-check pl-0 mb-3 col-2">
+				 <input type="checkbox" class="filter-option form-check-input filled-in" id="kawasaki"/>
+				 <label class="brand form-check-label small text-uppercase card-link-secondary" for="kawasaki">Kawasaki</label>
+			</div>
+
+			<div class="form-check pl-0 mb-3 col-2">
+				 <input type="checkbox" class="filter-option form-check-input filled-in" id="ktm"/>
+				 <label class="brand form-check-label small text-uppercase card-link-secondary" for="ktm">Ktm</label>
+			</div>
+
+			<div class="form-check pl-0 mb-3 col-2">
+				 <input type="checkbox" class="filter-option form-check-input filled-in" id="suzuki"/>
+				 <label class="brand form-check-label small text-uppercase card-link-secondary" for="suzuki">Suzuki</label>
+			</div>
+
+			<div class="form-check pl-0 mb-3 col-2">
+				 <input type="checkbox" class="filter-option form-check-input filled-in" id="triumph"/>
+				 <label class="brand form-check-label small text-uppercase card-link-secondary" for="triumph">Triumph</label>
+			</div>
+
+			<div class="form-check pl-0 mb-3 col-2">
+				 <input type="checkbox" class="filter-option form-check-input filled-in" id="yamaha"/>
+				 <label class="brand form-check-label small text-uppercase card-link-secondary" for="yamaha">Yamaha</label>
+			</div>
+
+		</div>
+
+		<div class="row">
+
+			{% for announcement in announcements %}
+				{% if announcement.IsActive %}
+					<div class="col-lg-4 col-md-6 mb-4">
+						<div class="card h-100">
+							<!--http://placehold.it/700x400-->
 							{% if announcement.IsSold %}
-								<span class="card-announcement" href="{{ path('announcement', {'id': announcement.id}) }}">{{announcement.Title}} {{announcement.IsPermisA2 ? 'Permis A2' : ''}}</span>
+								<span class="notify-badge">Vendu</span>
+								<img class="card-img-top" src="../../templates/imagesmotos/{{ asset(announcement.Image1) |split('/')|last }}" alt="">
 							{% elseif announcement.IsSold == false %}
-								<a class="card-announcement" href="{{ path('announcement', {'id': announcement.id}) }}">{{announcement.Title}} {{announcement.IsPermisA2 ? 'Permis A2' : ''}}</a>
+								<a href="{{ path('announcement', {'id': announcement.id}) }}">
+									<img class="card-img-top" src="../../templates/imagesmotos/{{ asset(announcement.Image1) |split('/')|last }}" alt="">
+								</a>
 							{% endif %}
-							</h4>
 							
-							<h5>Prix: {{ (announcement.IsSold) ? "0" : announcement.Price}}€</h5>
-							
-							<h5 class="card-text">KM: {{announcement.Km}}</h5>
-						</div>
-						<div class="card-footer">
-							<small class="text-muted"></small>
+							<div class="card-body">
+								<h4 class="card-title">
+								{% if announcement.IsSold %}
+									<span class="card-announcement" href="{{ path('announcement', {'id': announcement.id}) }}">{{announcement.Title}} {{announcement.IsPermisA2 ? 'Permis A2' : ''}}</span>
+								{% elseif announcement.IsSold == false %}
+									<a class="card-announcement" href="{{ path('announcement', {'id': announcement.id}) }}">{{announcement.Title}} {{announcement.IsPermisA2 ? 'Permis A2' : ''}}</a>
+								{% endif %}
+								</h4>
+								
+								<h5>Prix: {{ (announcement.IsSold) ? "0" : announcement.Price}}€</h5>
+								
+								<h5 class="card-text">KM: {{announcement.Km}}</h5>
+							</div>
+							<div class="card-footer">
+								<small class="text-muted"></small>
+							</div>
 						</div>
 					</div>
-				</div>
 
-			{% endif %}
-		{% endfor %}
+				{% endif %}
+			{% endfor %}
+
+		</div>
 	</div>
 
 {% endblock %}
