@@ -17,7 +17,7 @@
 		</div>
 
 		<div class="ml-2">
-        	<button class="brand btn btn-primary filter-button" data-filter="all">All</button>
+        	<button class="brand btn btn-primary filter-button" data-filter="all">Tout</button>
         	<button class="brand btn btn-default filter-button" data-filter="a2">A2</button>
         	<button class="brand btn btn-default filter-button" data-filter="honda">Honda</button>
         	<button class="brand btn btn-default filter-button" data-filter="kawasaki">Kawasaki</button>
@@ -31,7 +31,7 @@
 
 			{% for announcement in announcements %}
 				{% if announcement.IsActive %}
-					<div class="col-lg-4 col-md-6 mb-4">
+					<div class="col-lg-4 col-md-6 mb-4 filter {{ (announcement.IsPermisA2) ? 'a2' : '' }} {{ announcement.Title|split(' ')[0]|lower }}">
 						<div class="card h-100">
 							<!--http://placehold.it/700x400-->
 							{% if announcement.IsSold %}
@@ -67,5 +67,9 @@
 
 		</div>
 	</div>
+
+{% block javascripts %} 
+    <script type="text/javascript" src="/src/js/filter.js"></script>
+{% endblock %}
 
 {% endblock %}
