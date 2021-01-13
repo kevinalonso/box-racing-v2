@@ -41,10 +41,10 @@ class CategoryController extends AbstractController
         }
         
       
-    	return $this->render('category.html.twig', [
+    	/*return $this->render('category.html.twig', [
             'announcements' => $announcements,
             'titleCat' => $catName
-        ]);
+        ]);*/
     }
 
     /**
