@@ -83,3 +83,11 @@ body{
 .white{
   color: white;
 }
+
+.brand{
+  color: white;
+}
+
+.btn-default:hover{
+  color: red;
+}
