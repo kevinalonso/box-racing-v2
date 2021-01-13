@@ -87,6 +87,8 @@ class Announcement
      */
     private $Km;
 
+    private $Brand;
+
 
     public function getId(): ?int
     {
@@ -153,7 +155,7 @@ class Announcement
         return $this;
     }
 
-     public function setKm(string $Km): self
+    public function setKm(string $Km): self
     {
         $this->Km = $Km;
 
@@ -163,6 +165,18 @@ class Announcement
     public function getKm(): ?string
     {
         return $this->Km;
+    }
+
+     public function setBrand(string $Brand): self
+    {
+        $this->Brand = $Brand;
+
+        return $this;
+    }
+
+    public function getBrand(): ?string
+    {
+        return $this->Brand;
     }
 
 
