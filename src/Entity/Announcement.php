@@ -87,9 +87,6 @@ class Announcement
      */
     private $Km;
 
-    private $Brand;
-
-
     public function getId(): ?int
     {
         return $this->id;
@@ -166,19 +163,6 @@ class Announcement
     {
         return $this->Km;
     }
-
-     public function setBrand(string $Brand): self
-    {
-        $this->Brand = $Brand;
-
-        return $this;
-    }
-
-    public function getBrand(): ?string
-    {
-        return $this->Brand;
-    }
-
 
     public function getVirtualFilename1()
     {
