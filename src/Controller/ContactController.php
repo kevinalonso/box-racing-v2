@@ -28,13 +28,13 @@ class ContactController extends AbstractController
         $name = $request->request->get('name');
         $obj = $request->request->get('obj');
         $msg = $request->request->get('msg');
-        $pj = $request->request->get('pj');
+        //$pj = $request->request->get('pj');
 
         $message = (new \Swift_Message($obj))
             ->setFrom($email)
             ->setTo('contact@box-racing.fr')
-            ->setBody($msg)
-            ->attach(\Swift_Attachment::fromPath($pj));
+            ->setBody($msg);
+            //->attach(\Swift_Attachment::fromPath($pj));
 
         $mailer->send($message);
         

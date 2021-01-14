@@ -1,6 +1,6 @@
 doctrine:
     dbal:
-        url: mysql://root:@127.0.0.1:3306/boxracingv2?serverVersion=mariadb-10.4.11
+        url: mysql://boxracinnnbox:Boxracing29@boxracinnnbox.mysql.db:3306/boxracinnnbox
         #mysql://boxracinnnbox:Boxracing29@boxracinnnbox.mysql.db:3306/boxracinnnbox
         #mysql://boxracinnnbox:Boxracing29@boxracinnnbox.mysql.db:3306/boxracinnnbox
         #mysql://root:@127.0.0.1:3306/boxracingv2?serverVersion=mariadb-10.4.11
