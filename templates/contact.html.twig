@@ -2,108 +2,109 @@
 
 {% block body %}
 
-<div class="container">
-<!--Section: Contact v.2-->
-    <section class="mb-4">
+<form id="contactbox">
+    <div class="container">
+    <!--Section: Contact v.2-->
+        <section class="mb-4">
 
-    <!--Section heading-->
-    <h2 class="h1-responsive font-weight-bold my-4" style="color:white;">Contactez nous !</h2>
-    <!--Section description-->
-    <!--<p class="w-responsive mx-auto mb-5">Si vous avez des questions n'hésitez pas à nous contacter</p>-->
+        <!--Section heading-->
+        <h2 class="h1-responsive font-weight-bold my-4" style="color:white;">Contactez nous !</h2>
+        <!--Section description-->
+        <!--<p class="w-responsive mx-auto mb-5">Si vous avez des questions n'hésitez pas à nous contacter</p>-->
 
-    <div class="row">
+        <div class="row">
 
-        <!--Grid column-->
-        <div class="col-md-9 mb-md-0 mb-5">
-            <form id="contact-form" name="contact-form" method="POST">
+            <!--Grid column-->
+            <div class="col-md-9 mb-md-0 mb-5">
+                <form id="contact-form" name="contact-form" method="POST">
 
-                <!--Grid row-->
-                <div class="row">
+                    <!--Grid row-->
+                    <div class="row">
 
-                    <!--Grid column-->
-                    <div class="col-md-6">
-                        <div class="md-form mb-0">
-                            <input type="text" id="name" name="name" placeholder="Votre Nom" class="form-control" required="required">
+                        <!--Grid column-->
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <input type="text" id="name" name="name" placeholder="Votre Nom" class="form-control" required="required" value="toto">
+                            </div>
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <input type="text" id="email" name="email" placeholder="Votre Email" class="form-control" required="required" value="k.alonso292@gmail.com">
+                            </div>
+                        </div>
+                        <!--Grid column-->
+                    </div>
+                    <!--Grid row-->
+
+                    <!--Grid row-->
+                    <div class="row mt-5">
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <input type="text" id="subject" required="required" name="subject" value = "Kévin ALONSO"class="form-control" placeholder="Objet de votre demande">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <input type="file" id="pj" name="fichier" class="form-control" placeholder="Joindre un fichier">
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--Grid row-->
+
+                    <!--Grid row-->
+                    <div class="row mt-5">
+
+                        <!--Grid column-->
+                        <div class="col-md-12">
+
+                            <div class="md-form">
+                                <textarea type="text" required="required" id="message" name="message" rows="10" class="form-control md-textarea" placeholder="Votre Message">fffff</textarea>
+                            </div>
+
                         </div>
                     </div>
-                    <!--Grid column-->
+                    <!--Grid row-->
 
-                    <!--Grid column-->
-                    <div class="col-md-6">
-                        <div class="md-form mb-0">
-                            <input type="text" id="email" name="email" placeholder="Votre Email" class="form-control" required="required">
-                        </div>
-                    </div>
-                    <!--Grid column-->
+                </form>
+
+                <div class="text-center text-md-left mt-5">
+                    <a class="btn btn-primary" onclick="sendMailClick()">Envoyer</a>
                 </div>
-                <!--Grid row-->
-
-                <!--Grid row-->
-                <div class="row mt-5">
-                    <div class="col-md-6">
-                        <div class="md-form mb-0">
-                            <input type="text" id="subject" required="required" name="subject" class="form-control" placeholder="Objet de votre demande">
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <!--<div class="md-form mb-0">
-                            <input type="file" id="pj" name="pj" class="form-control" placeholder="Joindre un fichier">
-                        </div>-->
-                    </div>
-
+                <div class="status mt-5">
+                   <div id="alert-mail" style="visibility: hidden;" class="alert alert-success" role="alert">
+                        Votre Email a été envoyé !
+                   </div>
                 </div>
-                <!--Grid row-->
-
-                <!--Grid row-->
-                <div class="row mt-5">
-
-                    <!--Grid column-->
-                    <div class="col-md-12">
-
-                        <div class="md-form">
-                            <textarea type="text" required="required" id="message" name="message" rows="10" class="form-control md-textarea" placeholder="Votre Message"></textarea>
-                        </div>
-
-                    </div>
-                </div>
-                <!--Grid row-->
-
-            </form>
-
-            <div class="text-center text-md-left mt-5">
-                <a class="btn btn-primary" onclick="sendMailClick()">Envoyer</a>
             </div>
-            <div class="status mt-5">
-               <div id="alert-mail" style="visibility: hidden;" class="alert alert-success" role="alert">
-                    Votre Email a été envoyé !
-               </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-md-3 text-center">
+                <ul class="list-unstyled mb-0 bg-dark">
+                    <li>
+                        <img src="/templates/images/logo.png"/>
+                    </li>
+
+                    <li><i class="fa fa-phone mt-4 fa-2x white"></i>
+                        <p class="white">02 98 80 21 46</p>
+                    </li>
+
+                    <li><i class="fa fa-envelope mt-4 fa-2x white"></i>
+                        <p class="white">contact@box-racing.fr</p>
+                    </li>
+                </ul>
             </div>
+            <!--Grid column-->
+
         </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
-        <div class="col-md-3 text-center">
-            <ul class="list-unstyled mb-0 bg-dark">
-                <li>
-                    <img src="/templates/images/logo.png"/>
-                </li>
-
-                <li><i class="fa fa-phone mt-4 fa-2x white"></i>
-                    <p class="white">02 98 80 21 46</p>
-                </li>
-
-                <li><i class="fa fa-envelope mt-4 fa-2x white"></i>
-                    <p class="white">contact@box-racing.fr</p>
-                </li>
-            </ul>
-        </div>
-        <!--Grid column-->
-
+        </section>
+    <!--Section: Contact v.2-->
     </div>
-    </section>
-<!--Section: Contact v.2-->
-
-</div>
+</form>
 
 {% endblock %}

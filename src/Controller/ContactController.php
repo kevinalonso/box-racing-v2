@@ -28,18 +28,20 @@ class ContactController extends AbstractController
         $name = $request->request->get('name');
         $obj = $request->request->get('obj');
         $msg = $request->request->get('msg');
-        //$pj = $request->request->get('pj');
+        $attachment = $request->files->get('nameFile');
+        //$attachmentName = $request->request->get('nameFile');
+        //$attachmentName = "path/attach/".$attachmentName;
 
         $message = (new \Swift_Message($obj))
             ->setFrom($email)
-            ->setTo('contact@box-racing.fr')
-            ->setBody($msg);
-            //->attach(\Swift_Attachment::fromPath($pj));
+            ->setTo('k.alonso292@gmail.com')
+            ->setBody($msg)
+            ->attach(\Swift_Attachment::fromPath($attachment));
+            //->setFilename($attachmentName);
 
         $mailer->send($message);
-        
         return new JsonResponse(array(
-            'status' => 'OK',
+            'status' => 'OK'
         ),
         200);
     }
